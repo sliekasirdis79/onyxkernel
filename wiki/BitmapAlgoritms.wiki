@@ -34,33 +34,5 @@ long *pmm_alloc()
 }
 }}}
 
-When dealing with bitmaps you must remember that the closest relative to a bit in C is a `char` or 8 bit-byte. To split the byte into individual bits, we must use binary logic. The '&' character in C stands for binary AND, the masking bit. When using '&', you can mask certain bits so that you can read the bits you want. If you do not understand binary math, check [http://www.rrko.com here] first.
-
-Here is an example in C that shows how to use the binary AND ('&'):
-
-{{{
-char result;
-result = 0x25 & 3;
-}}}
-
-And here is the equivilant in binary math:
-
-{{{
-0001 1001 (this is 25 in binary)
-&    0011 (AND 3)
-0001 1000 (bits 1 and 2 are masked )
-}}}
-
-Here is a table showing how AND works:
-
-||Bit||AND||Bit|| = ||
-|| 1 || & || 1 || 1 ||
-|| 1 || & || 0 || 0 ||
-|| 0 || & || 1 || 0 ||
-|| 0 || & || 0 || 0 ||   
-
-
-
-
-
+When dealing with bitmaps you must remember that the closest relative to a bit in C is a `char` or 8 bit-byte. To split the byte into individual bits, we must use binary logic. The '&' character in C stands for binary AND, the masking bit. When using '&', you can mask certain bits so that you can read the bits you want. If you do not understand binary arithmetic, check [http://www.rrko.com here] first.
 
