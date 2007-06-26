@@ -1,13 +1,38 @@
 #summary Bitmap Algorithms
 
-= Introduction =
+===Introduction===
 
-Add your content here.
+Bitmaps are very handy when dealing with large arrays of boolean or flagged values. An example where you can apply bitmaps is memory management, especially when allocating or de-allocating pages
 
 
-= Details =
+===Details===
+Here is the code from the onyx `pmm_alloc` function. In the following section I will explain how and why the code works.
+{{{
+long *pmm_alloc()
+{
+	char seg[2];	/* 4 bit segments * 2 = 1 byte */
+	int i, r, x;	/* loop variables */
+	char c;			/* store current bitmap page */
+	long *addr;		/* used to store address of page */
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+	for ( i = 0; i < 1024; i++ )
+		if ( bmap[i] != 255 )
+			c = bmap[i];	/* find a free page */
+	
+	seg[0] = (c & 0xF);	/* first 4 bits */
+	seg[1] = (c & 0x0);	/* last 4 bits */
+
+	for ( r = 0; r < 2; r++ )	/* loop for each segment */
+		for ( i = 0; i < 6; x = pow( 2, 6 ), i++ ) /* loop for each bit */
+			if ( (seg[r] & x) == 0 )	/* bit x = 0 (free) */
+			{
+				addr = pagetable[i];	/* corresponding page */
+				seg[r] |= x;	/* set the bit as used */
+			}
+
+	return addr;
+}
+}}}
+
+When dealing with bitmaps you must remember that the closest relative to a bit in C is a `char` or 8 bit-byte. To split the byte into individual bits, we must use binary logic. The `&` character in C stands for binary AND, the masking bit. When using `&`, you can mask certain bits so that you can read the bits you want. If you do not understand binary math, check [http://www.rrko.com here] first.
+
