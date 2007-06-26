@@ -41,7 +41,7 @@ Here is an example in C that shows how to use the binary AND ('&'):
 {{{
 char result;
 result = 0x25 & 3;
-}}
+}}}
 
 And here is the equivilant in binary math:
 
@@ -53,11 +53,13 @@ And here is the equivilant in binary math:
 
 Here is a table showing how AND works:
 
-||Binary AND||Bit||AND||Bit|| = ||
-||          || 1 || & || 1 || 1 ||
-||          || 1 || & || 0 || 0 ||
-||          || 0 || & || 1 || 0 ||
-||          || 0 || & || 0 || 0 ||   
+||Bit||AND||Bit|| = ||
+|| 1 || & || 1 || 1 ||
+|| 1 || & || 0 || 0 ||
+|| 0 || & || 1 || 0 ||
+|| 0 || & || 0 || 0 ||   
+
+
 
 
 
