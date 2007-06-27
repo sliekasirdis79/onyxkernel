@@ -26,11 +26,12 @@ And here is the equivilant in binary math:
 
 Here is a table showing how AND works:
 
-||Bit||AND||Bit|| = ||
+||Bit||And||Bit|| = ||
 || 1 || & || 1 || 1 ||
 || 1 || & || 0 || 0 ||
 || 0 || & || 1 || 0 ||
 || 0 || & || 0 || 0 ||   
+
 
 
 
