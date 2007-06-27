@@ -1,0 +1,13 @@
+#summary Learning how to make an Operating System
+
+= Introduction =
+
+You may think that making an OS kernel is easy work if you've ever programmed before. You are wrong. You never
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
