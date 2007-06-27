@@ -34,5 +34,4 @@ long *pmm_alloc()
 }
 }}}
 
-When dealing with bitmaps you must remember that the closest relative to a bit in C is a `char` or 8 bit-byte. To split the byte into individual bits, we must use binary logic. The '&' character in C stands for binary AND, the masking bit. When using '&', you can mask certain bits so that you can read the bits you want. If you do not understand binary arithmetic, check [http://code.google.com/p/onyxkernel/w/BinaryArithmetic here] first.
-
+When dealing with bitmaps you must remember that the closest relative to a bit in C is a `char` or 8 bit-byte. To split the byte into individual bits, we must use binary logic. The '&' character in C stands for binary AND, the masking bit. When using '&', you can mask certain bits so that you can read the bits you want. If you do not understand binary arithmetic, check [http://code.google.com/p/onyxkernel/wiki/BinaryArithmetic here] first.
