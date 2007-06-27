@@ -5,16 +5,19 @@
 When programming in any language, it is always important to understand your roots.
 No, I'm not talking about BASIC or C, I'm talking about binary. All files, data and information used or stored in a computer is turned into bytecode.
 
-
 ==Details==
 
 ===Binary AND===
 Here is an example in C that shows how to use the binary AND ('&'):
-
 {{{
 char result;
-result = 0x25 & 3;
+result = 25 & 3;
+result = 24
+
+result = 25 & 0x0F; (0x0F = 15)
+result = 16
 }}}
+In the second example, we want to use 0x*0F* so that we are masking the first 4 bits, not the second 4 bits.
 
 And here is the equivilant in binary math:
 
@@ -25,17 +28,9 @@ And here is the equivilant in binary math:
 }}}
 
 Here is a table showing how AND works:
-
 ||Bit||And||Bit|| = ||
 || 1 || & || 1 || 1 ||
 || 1 || & || 0 || 0 ||
 || 0 || & || 1 || 0 ||
 || 0 || & || 0 || 0 ||   
-
-
-
-
-
-
-
-
+As you can see, AND only returns a value if the bit it is ANDing (< is that a word?) is equal to 1 (or ON, as I think of it).
