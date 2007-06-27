@@ -2,7 +2,7 @@
 
 = Introduction =
 
-You may think that making an OS kernel is easy work if you've ever programmed before. You are wrong. You never
+You may think that making an OS kernel is easy work if you've ever programmed before. You are wrong. You don't have an established API or library to program with; You have to start from _scratch_.
 
 
 = Details =
@@ -10,4 +10,5 @@ You may think that making an OS kernel is easy work if you've ever programmed be
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * BinaryArithmetic
+
