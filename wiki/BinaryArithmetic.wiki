@@ -1,0 +1,40 @@
+#summary One-sentence summary of this page.
+
+==Introduction==
+
+When programming in any language, it is always important to understand your roots.
+No, I'm not talking about BASIC or C, I'm talking about binary. All files, data and information used or stored in a computer is turned into bytecode.
+
+
+==Details==
+
+===Binary AND===
+Here is an example in C that shows how to use the binary AND ('&'):
+
+{{{
+char result;
+result = 0x25 & 3;
+}}}
+
+And here is the equivilant in binary math:
+
+{{{
+0001 1001 (this is 25 in binary)
+&    0011 (AND 3)
+0001 1000 (bits 1 and 2 are masked )
+}}}
+
+Here is a table showing how AND works:
+
+||Bit||AND||Bit|| = ||
+|| 1 || & || 1 || 1 ||
+|| 1 || & || 0 || 0 ||
+|| 0 || & || 1 || 0 ||
+|| 0 || & || 0 || 0 ||   
+
+
+
+
+
+
+
