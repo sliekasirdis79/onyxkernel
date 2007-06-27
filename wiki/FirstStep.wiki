@@ -1,14 +1,44 @@
 #summary Learning how to make an Operating System
 
-= Introduction =
+== Introduction ==
 
-You may think that making an OS kernel is easy work if you've ever programmed before. You are wrong. You don't have an established API or library to program with; You have to start from _scratch_.
+You may think that making an OS kernel is easy work if you've ever programmed before. You are wrong. You don't have an established API or library to program with; You have to start from _scratch_. In this tutorial, we are going to skip bootloaders and linkers and go straight to programming our kernel.
+
+== Details ==
+
+The programming language that I prefer for writing an OS in is C. C runs on almost every platform, and is easy to compile and run. Our very first step will be printing to screen. You may think you're over your head, but trust me, this isn't too painful =). Open up your favorite text editor or IDE, and create a new file called `video.c`. This file will contain all of our functions for writing to the screen; at least for now.
+
+== Code ==
+
+Our first function will be the classic `putc`. Putc is an abbreviation for put-char or character. Before you start actually writing code, there are a few things you should keep in mind: Video memory is located at 0xB8000, and there are 16 foreground and 16 background colors. We are going to be using gray text on a black background for now, so that is 0x7. The code for each character is always stored in an even array `vidmem[0]` and the color fr each character is stored directly after the character `vidmem[1]`.
+{{{
+/* Simple putc */
+int x, y; /* Our global 'x' and 'y' */
+char color; /* Our global color attribute */
+void putc( unsigned char c )
+{
+  char *vidmem = (char*)0xB8000; /* pointer to video memory */
+  int pos = ( y * 2 ) + x; /* Get the position */
+  vidmem[pos]   = c; /* print the character */
+  vidmem[pos++] = color; /* Set the color attribute */
+}
+}}}
+
+Our next function will be `puts`. This function writes a message to the screen, and relies on the putc function to do so.
+{{{
+int puts( char *message )
+{
+  int length;
+  while(*message)
+  {
+    putc(*message++);
+    length++;
+  }
+  return length;
+}
+}}}
+
+ 
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * BinaryArithmetic
 
