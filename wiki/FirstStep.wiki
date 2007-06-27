@@ -1,4 +1,5 @@
 #summary Learning how to make an Operating System
+#labels Phase-Implementation,Featured
 
 == Introduction ==
 
@@ -122,10 +123,34 @@ kernel_segments:
 	mov esp, 090000h        ; Move the stack pointer to 090000h
 	
 	jmp 08h:0x1000          ; Jump to section 08h (code), offset 01000h
+
+
+times 510-($-$$) db 0           ; Fill up the file with zeros
+
+dw 0AA55h			; Boot sector identifyer
 }}}
-Yes I'm sure that is confusing, but here is a short wrap up. When you turn on you computer, it automatically starts into real mode, where you can use the bios, but there is no data protection. We (as OS-developers) want to switch to protected mode, where you have 4gb of memory, and the aforementioned data protection.
+Yes I'm sure that is confusing, but here is a short wrap up. When you turn on you computer, it automatically starts into real mode, where you can use the bios, but there is no data protection. We (as OS-developers) want to switch to protected mode, where you have 4gb of memory, and the aforementioned data protection. The BIOS will look for a bootsector that is exactly 512 bytes and has 0xAA55 as the boot checksum. Then the bios will load our bootsector, which in turn loads our loader, which loads our OS =).
+
+Now compile our bootloader using 
+{{{
+nasm -f bin boot.asm -o boot.bin
+}}}
+You should now have the files kernel.bin and boot.bin. If you are using Windows use this command:
+{{{
+copy /b boot.bin + kernel.bin os.img
+}}}
+
+Or on linux:
+{{{
+dd if=boot.bin of=os.img bs=512 count=1
+dd if=kernel.bin of=os.img bs=512 seek=1
+}}}
+
+Then tell your emulator to use that file (os.img) and you're on your way to OS Development =)
+
+--Michael
+06/27/2007
  
 
  
-
 
