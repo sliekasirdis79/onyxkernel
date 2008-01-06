@@ -3,7 +3,8 @@
 
 == Introduction ==
 
-_Warning_ Writing an Operating System can be a long and frustrating challenge - even for experienced programmers. You will find yourself trying to debug errors for hours, and then see the error right in front of your face. Writing an Operating System is a hard and worthy challenge, but don't be frightened off.
+*_Warning_*: Writing an Operating System can be a long and frustrating challenge - even for experienced programmers. You will find yourself trying to debug errors for hours, and then see the error right in front of your face. Writing an Operating System is a hard and worthy challenge, but don't be frightened off.
+
 You may think that making an OS kernel is easy if you've ever programmed before. Think again. You don't have an established API or library to program with; You have to start from _scratch_. In this tutorial, we are going to learn about bootloaders and linkers and the basics of programming a simple Operating System. If you have never programmed before, I suggest you read some tutorials and try a few smaller projects first. 
 
 == Details ==
