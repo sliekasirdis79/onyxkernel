@@ -219,7 +219,8 @@ dd if=kernel.bin of=os.img bs=512 seek=1
 
 Then tell your emulator (bochs, qemu) to use that file (os.img) as a floppy disk to boot from, and you're on your way to OS Development.
 
---Michael
+--Michael 'lazyear' Lazear
+
 Revision 2, 1/5/08
  
 
