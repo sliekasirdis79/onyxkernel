@@ -1,0 +1,17 @@
+#summary Work In Progress
+#labels Phase-Design
+
+= Introduction =
+
+*_Suggested Reading:_* [http://osdever.net/bkerndev/Docs/intro.htm Bran's Kernel Development Tutorial]
+
+*_This page is currently a work in progess_*
+So, you have made your own Operating System, but you've finally come to a stopping point. After hours of reading and research and banging your head on your keyboard, you have decided to give it up. But, it is well worth the time spent to be able to finally multitask.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
