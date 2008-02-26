@@ -105,6 +105,55 @@ Yes, it really is that easy. Just kidding, no we have to write a small assembly 
 
 = Step 4: Writing a `task switch` Function =
 
-Now, we have to write the actual switching function. This doesn't distinguish between tasks, it just 
+Now, we have to write the actual switching function. This doesn't distinguish between tasks, it just retrieves the next task's 
 
-*_WIP_*
+{{{
+extern sched			; core/sched.c
+
+global irq0
+irq0:
+		pusha		; push general registers onto stack
+		push ds		; push ds onto stack
+		push es		; push es
+		push fs		; push fs
+		push gs		; push gs
+		
+		mov eax, 0x10	; save selector
+		mov ds, eax		
+		mov es, eax
+		mov fs, eax
+		mov gs, eax		
+		
+		mov eax, esp	; stack => eax
+		push eax	; push eax (esp)
+
+		call sched	; sched(eax) returns stack of next task
+		mov esp, eax	; return value => stack
+		
+		mov al, 0x20	; ack IRQ
+		out 0x20, al	
+		
+		pop gs		; pop gs off task stack
+		pop fs		; pop fs
+		pop es		; pop es
+		pop ds		; pop ds
+		popa		; pop general registers
+
+		iret		; interrupt return
+}}}
+
+Just install irq0 into your interrupt request table, and each time that the system timer interrupt (Interrupt Request 0, Int 32) interrupts, you will switch tasks! 
+
+= Task Setup =
+
+I have prepared a simple task for you. Just remember whenever you create a task to make sure that it loops. Just call `CreateTask(0, "Idle Task", IdleTask);`
+{{{
+void IdleTask(void)
+{
+	printf("Idle Task\n");
+	for(;;);				// Critical, will page fault if no loop
+}
+}}}
+And that's it!
+
+Enjoy! Let me know what you think of this tutorial
