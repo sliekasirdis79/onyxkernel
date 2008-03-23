@@ -1,5 +1,7 @@
-#summary Learning how to make an Operating System
+#summary --Being Repaired--
 #labels Phase-Implementation,Featured
+
+=***Construction - Please be patient while I iron out some issues in the code***=
 
 == Introduction ==
 
