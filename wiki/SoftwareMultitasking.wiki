@@ -1,4 +1,4 @@
-#summary Work In Progress
+#summary Adding Multitasking capability to your OS
 #labels Phase-Implementation,Featured
 
 = Introduction =
