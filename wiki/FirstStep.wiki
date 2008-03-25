@@ -27,6 +27,13 @@ void putc( unsigned char c )
   int pos = ( y * 2 ) + x; /* Get the position */
   vidmem[pos]   = c; /* print the character */
   vidmem[pos++] = color; /* Set the color attribute */
+  if (c == '\n') // newline
+  {
+    y++;
+    x = 0;
+  }
+  else
+    x += 2; // 2 bytes per char
 }
 }}}
 
@@ -199,7 +206,7 @@ Then tell your emulator (bochs, qemu) to use that file (os.img) as a floppy disk
 
 --Michael 'lazyear' Lazear
 
-Revision 3, 03/23/08
+Revision 3, 03/25/08
  
 
  
