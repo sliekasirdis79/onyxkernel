@@ -1,5 +1,5 @@
 #summary Learn how to make a simple Operating System
-#labels Phase-Implementation,Featured
+#labels Deprecated
 
 =***Under Construction - Please be patient while I work out some issues in the code***=
 =***Bootsector has been updated***=
