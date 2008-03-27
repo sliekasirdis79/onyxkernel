@@ -83,7 +83,7 @@ There. Now we can create new tasks easily.
 
 = Step 3: Writing a Task Scheduler = 
 
-I am going to provide you with just a basic scheduler, one that can switch between just 2 tasks. If you want more tasks, figure it out yourself :). 
+I am going to provide you with just a basic round-robin scheduler, one that can switch between just 2 tasks. If you want more tasks, just take out the switch statement and increment `pid` until it goes above the number of created tasks, and loop back down to zero.
 
 {{{
 unsigned int sched(unsigned int context)  // Our assembly code provides us with the context
@@ -101,7 +101,7 @@ unsigned int sched(unsigned int context)  // Our assembly code provides us with 
          return tasks[pid].stack;         // Return new task's context.
 }
 }}}
-Yes, it really is that easy. Just kidding, no we have to write a small assembly function to do the actual setup.
+Now we have to write a small assembly function to do the actual setup.
 
 = Step 4: Writing a `task switch` Function =
 
