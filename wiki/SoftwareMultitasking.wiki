@@ -74,6 +74,8 @@ void CreateTask(int id, unsigned char name[32], void (*thread)())
 
 	tasks[id] = *task;
 
+        pid = id; // enable task switching
+
 	asm volatile("sti");
 	
 }
