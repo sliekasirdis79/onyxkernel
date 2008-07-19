@@ -113,7 +113,7 @@ load:
         mov ah, 0               ; floppy drive reset command
         int 13h                 ; bios floppy interrupt
         or ah, ah               ; check for error code
-        jnz load		        ; repeat if error
+        jnz load		; repeat if error
 
         mov ax, 0
         mov es, ax
@@ -126,9 +126,9 @@ load:
         mov dh, 0               ; head
         int 13h                 ; bios floppy interrupt
         or ah, ah               ; check for error code
-        jnz load		        ; repeat if error
+        jnz load		; repeat if error
 
-        cli                     ; Disable interrupts, we want to be alone
+        cli                     ; Disable interrupts
 
         xor ax, ax
         mov ds, ax              ; Set DS-register to 0 - used by lgdt
@@ -182,7 +182,7 @@ gdt_desc:
 
 times 510-($-$$) db 0           ; fill up the file with zeros
 
-        dw 0AA55h                ; boot sector identifyer
+        dw 0AA55h               ; boot sector identifier
 }}}
 Yes I'm 
 sure that is confusing, but here is a short wrap up. When you turn on you computer, it automatically starts into real mode (16 bit mode), where you can use the BIOS to carry out certain functions like printing to the screen and reading files. Real mode has several limitations: you can only access the first 1MB of memory, and there is no protection for data. We (as OS-developers) want to switch to protected mode (32 bit mode), where you have 4GB of memory, and the aforementioned data protection. In protect mode though, you do not have access to the BIOS. Therefore, since we can't rely on the BIOS, we need to write functions for our OS to use. But back to the bootloader. The BIOS will look for a bootsector that is exactly 512 bytes (1 sector) and has 0xAA55 as the boot checksum. Then the BIOS will load our bootsector, which in turn loads our loader, which loads our OS.
