@@ -1,6 +1,7 @@
-#labels Phase-Implementation,Featured
-<wiki:gadget url="http://onyxkernel.googlecode.com/svn/wiki/adsense.xml" height="60" width="468"/>
 #summary Adding Multitasking capability to your OS
+#labels Phase-Implementation,Featured
+
+<wiki:gadget url="http://onyxkernel.googlecode.com/svn/wiki/adsense.xml" height="60" width="468"/>
 
 = Introduction =
 
