@@ -2,6 +2,7 @@
 <Module>
 	<ModulePrefs title="hello world example" /> 
   	<Content type="html">
+	<? [CDATA[
 		Hello, World
   	]]>
   </Content>
