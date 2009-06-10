@@ -1,5 +1,6 @@
-#summary Adding Multitasking capability to your OS
 #labels Phase-Implementation,Featured
+<wiki:gadget url="http://onyxkernel.googlecode.com/svn/wiki/adsense.xml" height="60" width="468"/>
+#summary Adding Multitasking capability to your OS
 
 = Introduction =
 
@@ -163,3 +164,5 @@ And that's it!
 Enjoy! Let me know what you think of this tutorial
 
 *_Examples_* [http://code.google.com/p/onyxkernel/downloads/list Download the latest Stable Release of Kryos]. You can find the multitasking code in \core\task\
+
+<wiki:gadget url="http://onyxkernel.googlecode.com/svn/wiki/adsense.xml" height="60" width="468"/>
