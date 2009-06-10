@@ -13,4 +13,4 @@ Add your content here.  Format your content with:
   * Automatic links to other wiki pages
 
 Testing Google Adsense
-<wiki:gadget url="http://onyxkernel.googlecode.com/svn/wiki/adsense.xml" />
+<wiki:gadget url="http://onyxkernel.googlecode.com/svn/wiki/adsense.xml" height="60" width="468"/>
