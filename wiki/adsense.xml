@@ -2,9 +2,9 @@
 <Module>
 	<ModulePrefs title="hello world example" /> 
   	<Content type="html">
-	<? [CDATA[
+	<![CDATA[
 		Hello, World
   	]]>
-  </Content>
+  	</Content>
 </Module>
 
