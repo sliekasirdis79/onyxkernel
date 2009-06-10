@@ -1,2 +1,0 @@
-<wiki:gadget url="http://onyxkernel.googlecode.com/svn/wiki/adsense.xml" border="0" width="468" 
-height="60" />
