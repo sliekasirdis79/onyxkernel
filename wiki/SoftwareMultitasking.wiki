@@ -5,6 +5,8 @@
 
 *_Suggested Reading:_* [http://osdever.net/bkerndev/Docs/intro.htm Bran's Kernel Development Tutorial]
 
+*_Examples_* [http://code.google.com/p/onyxkernel/downloads/list Download the latest Stable Release of Kryos]. You can find the multitasking code in \core\task\
+
 *_This page is currently a work in progress_*
 So, you have made your own Operating System, but you've finally come to a stopping point. After hours of reading and research and banging your head on your keyboard, you have decided to give it up. Soon, you will be able to switch tasks easily.
 
@@ -159,3 +161,5 @@ void IdleTask(void)
 And that's it!
 
 Enjoy! Let me know what you think of this tutorial
+
+*_Examples_* [http://code.google.com/p/onyxkernel/downloads/list Download the latest Stable Release of Kryos]. You can find the multitasking code in \core\task\
